@@ -1,0 +1,14 @@
+{
+  "name": "cleanzy-website",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "downloads": "for f in ../dist/*.dmg ../dist/*.zip ../dist/*.deb ../dist/*.tar.gz; do [ -e \"$f\" ] && cp \"$f\" public/downloads/; done; ls public/downloads"
+  },
+  "dependencies": {
+    "next": "16.4.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}

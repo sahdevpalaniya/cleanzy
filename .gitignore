@@ -1,0 +1,11 @@
+node_modules/
+dist/
+website/node_modules/
+website/out/
+website/.next/
+website/public/downloads/
+.playwright-mcp/
+.env*
+*.log
+.DS_Store
+website/AGENTS.md

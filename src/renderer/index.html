@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' file: data:; style-src 'self' 'unsafe-inline'; script-src 'self'">
+<title>Cleanzy</title>
+<link rel="stylesheet" href="ui/shell.css">
+<link rel="stylesheet" href="ui/overview.css">
+<link rel="stylesheet" href="ui/caches.css">
+<link rel="stylesheet" href="ui/devtools.css">
+<link rel="stylesheet" href="ui/largefiles.css">
+<link rel="stylesheet" href="ui/uninstaller.css">
+<link rel="stylesheet" href="ui/disk.css">
+<link rel="stylesheet" href="ui/settings.css">
+</head>
+<body>
+<div id="splash" role="status" aria-label="Starting Cleanzy">
+  <div class="sp-logo"><img src="../../assets/icons/icon-128.png" alt=""></div>
+  <b>Cleanzy</b><span class="sp-line"><i></i></span>
+</div>
+<aside id="side">
+  <div class="brand"><img class="logo" src="../../assets/icons/icon-64.png" alt="">Cleanzy</div>
+  <nav aria-label="Quick Clean"><h2 class="navh">Quick Clean</h2><ul id="nav-clean"></ul></nav>
+  <nav aria-label="Review and Remove"><h2 class="navh">Review &amp; Remove</h2><ul id="nav-review"></ul></nav>
+  <div class="sp"></div>
+  <nav aria-label="App"><ul id="nav-footer"></ul></nav>
+  <div id="store" aria-live="polite">
+    <div class="st-line"><b id="stFree">—</b> <span id="stOf"></span></div>
+    <div class="meter" role="presentation"><i id="stBar"></i></div>
+    <div class="st-trash">Trash <b id="stTrash">—</b></div>
+  </div>
+</aside>
+<header id="top">
+  <h1 id="title">Cleanzy</h1>
+  <div class="sp"></div>
+  <button class="btn" id="scanBtn" type="button">Scan</button>
+  <button class="btn solid" id="cleanSafe" type="button" aria-haspopup="dialog" disabled>Clean Safe Items</button>
+</header>
+<main id="views"></main>
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="sheets"></div>
+<script src="ui/shell.js"></script>
+<script src="ui/overview.js"></script>
+<script src="ui/caches.js"></script>
+<script src="ui/devtools.js"></script>
+<script src="ui/largefiles.js"></script>
+<script src="ui/uninstaller.js"></script>
+<script src="ui/disk.js"></script>
+<script src="ui/settings.js"></script>
+</body>
+</html>

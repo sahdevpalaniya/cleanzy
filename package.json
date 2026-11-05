@@ -1,0 +1,28 @@
+{
+  "name": "cleanzy-desktop",
+  "version": "1.3.0",
+  "description": "Smart cleaner and disk usage analyzer for Linux, macOS and Windows",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "env -u ELECTRON_RUN_AS_NODE electron . --no-sandbox",
+    "install-launcher": "bash scripts/install.sh --dev",
+    "build": "bash scripts/build.sh",
+    "install-app": "bash scripts/install-app.sh",
+    "deb": "bash scripts/build.sh linux",
+    "build:all": "bash scripts/build.sh all",
+    "build:linux": "bash scripts/build.sh linux",
+    "build:mac": "bash scripts/build.sh mac",
+    "build:win": "bash scripts/build.sh win",
+    "uninstall-app": "bash scripts/install-app.sh --uninstall",
+    "test": "node tests/unit.js && node --test tests/",
+    "uninstall-launcher": "bash scripts/install-app.sh --uninstall",
+    "e2e": "node tests/e2e.js",
+    "site": "cd website && npm run downloads && npm run build"
+  },
+  "devDependencies": {
+    "@electron/packager": "^18.4.4",
+    "electron": "^33.0.0"
+  },
+  "productName": "Cleanzy",
+  "author": "Sahdev Palaniya <sahdevpalaniya98@gmail.com>"
+}

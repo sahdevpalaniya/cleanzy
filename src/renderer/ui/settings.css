@@ -1,0 +1,30 @@
+/* Settings */
+.st{display:flex;flex-direction:column;gap:var(--gap);max-width:760px}
+.st .card{display:flex;flex-direction:column;gap:10px}
+.st fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.st legend{padding:0;margin-bottom:10px}
+.st-row{display:flex;gap:18px;flex-wrap:wrap}
+.st-opt{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.st-opt input{accent-color:var(--acc);margin:3px 0 0}
+.st-opt small{display:block;font-size:12px}
+.st-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.st select,.st input[type=number]{font:inherit;padding:5px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--fg)}
+.st input[type=number]{width:72px}
+.st-custom{display:inline-flex;gap:8px;align-items:center}
+.st-custom[hidden]{display:none}
+.st-list{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:12px}
+.st-list li{display:flex;align-items:center;gap:10px;padding:4px 4px 4px 12px}
+.st-list li+li{border-top:1px solid var(--line)}
+.st-path{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.st-hist{width:100%;border-collapse:collapse;font-size:13px}
+.st-hist th{text-align:left;font-weight:600;color:var(--fg3);font-size:12px;padding:6px 8px;border-bottom:1px solid var(--line)}
+.st-hist td{padding:8px;vertical-align:top;border-bottom:1px solid var(--line)}
+.st-hist ul{list-style:none;margin:6px 0 0;padding:0}
+.st-hist li{display:flex;justify-content:space-between;gap:12px}
+.st-tog{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0;cursor:pointer}
+.st-tog+.st-tog{border-top:1px solid var(--line)}
+.st-tog input{appearance:none;flex:none;margin:0;width:42px;height:24px;border-radius:999px;background:var(--hover);box-shadow:inset 0 0 0 1px var(--line);position:relative;cursor:pointer;transition:background .15s}
+.st-tog input::after{content:"";position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:#fff;transition:left .15s;box-shadow:0 1px 3px #0004}
+.st-tog input:checked{background:var(--btn);box-shadow:none}
+.st-tog input:checked::after{left:20px}
+.st-priv{text-align:center}

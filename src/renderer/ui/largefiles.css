@@ -1,0 +1,17 @@
+/* Large Files tab */
+.lf-sub{margin:0 0 12px}
+.lf-bar{margin-bottom:10px}
+.lf-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.lf-chip{font:inherit;font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px;border:1px solid var(--line);
+  background:var(--surface);color:var(--fg2);cursor:pointer}
+.lf-chip:hover{color:var(--fg);border-color:var(--fg3)}
+.lf-chip[aria-checked=true]{background:var(--btn);border-color:var(--btn);color:var(--btn-fg)}
+.lf-chip .n{font-weight:400;margin-left:6px;opacity:.75}
+.lf-chip[hidden],.lf-chips[hidden],.lf-list .lhead[hidden]{display:none}
+.lf-dchip{margin-left:8px}
+.lf-dup{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.lf-dup[hidden]{display:none}
+.lf-copies{font-size:11px;font-weight:600;padding:1px 7px;border-radius:999px;margin-left:6px;
+  color:var(--acc);background:color-mix(in srgb,var(--acc) 14%,transparent);white-space:nowrap}
+.lf-keep{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:var(--fg2);margin-top:2px}
+.lf-list[hidden],.lf-wait[hidden]{display:none}
