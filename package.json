@@ -9,6 +9,7 @@
     "build": "bash scripts/build.sh",
     "install-app": "bash scripts/install-app.sh",
     "deb": "bash scripts/build.sh linux",
+    "apt-repo": "bash scripts/make-apt-repo.sh",
     "build:all": "bash scripts/build.sh all",
     "build:linux": "bash scripts/build.sh linux",
     "build:mac": "bash scripts/build.sh mac",

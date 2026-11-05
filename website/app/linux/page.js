@@ -1,4 +1,4 @@
-import { Shell, Downloads, Faq, meta, appLd, faqLd, VERSION, BUILDS } from '../site';
+import { Shell, Downloads, Faq, meta, appLd, faqLd, VERSION, BUILDS, SITE } from '../site';
 
 export const metadata = meta('/linux/', 'Free Disk Cleaner & Disk Usage Analyzer for Linux',
   'Free Linux disk cleaner with a Storage Map treemap. Clears caches, apt packages, old journal logs, disabled snap revisions and developer junk. .deb and .tar.gz.');
@@ -23,7 +23,11 @@ export default function Linux() {
 
       <article className="wrap narrow doc">
         <h2>Install on Linux</h2>
-        <h3>Debian, Ubuntu and derivatives (.deb)</h3>
+        <h3>Debian, Ubuntu and derivatives (apt)</h3>
+        <p>Add the Cleanzy repository once, then install. <code>sudo apt upgrade</code> keeps it up to date.</p>
+        <pre>{`curl -fsSL ${SITE}/install.sh | sudo bash`}</pre>
+        <p>After that, <code>sudo apt install cleanzy</code> works like any other package.</p>
+        <h3>Or install the .deb directly</h3>
         <p>Download <code>cleanzy_{VERSION}_amd64.deb</code> (or <code>arm64</code>), double-click it and choose Install, or run:</p>
         <pre>sudo apt install ./cleanzy_{VERSION}_amd64.deb</pre>
         <p>Then open Cleanzy from your app menu.</p>

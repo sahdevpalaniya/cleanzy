@@ -48,6 +48,20 @@ StartupNotify=true
 StartupWMClass=Cleanzy
 DESK
 
+# Like Chrome: installing the .deb also adds the Cleanzy apt repo, so `apt upgrade` updates it.
+# Needs the public key of the repo signing key (see make-apt-repo.sh); skipped when unset.
+if [[ -n "${CLEANZY_GPG_KEY:-}" ]]; then
+  REPO="${CLEANZY_REPO_URL:-https://cleanzy.app/apt}"
+  mkdir -p "$STAGE/usr/share/keyrings" "$STAGE/etc/apt/sources.list.d"
+  gpg --export "$CLEANZY_GPG_KEY" > "$STAGE/usr/share/keyrings/cleanzy.gpg"
+  [[ -s "$STAGE/usr/share/keyrings/cleanzy.gpg" ]] || { echo "gpg key $CLEANZY_GPG_KEY not found" >&2; exit 1; }
+  echo "deb [signed-by=/usr/share/keyrings/cleanzy.gpg] $REPO stable main" > "$STAGE/etc/apt/sources.list.d/cleanzy.list"
+  echo /etc/apt/sources.list.d/cleanzy.list > "$STAGE/DEBIAN/conffiles"
+  chmod 644 "$STAGE/usr/share/keyrings/cleanzy.gpg" "$STAGE/etc/apt/sources.list.d/cleanzy.list"
+else
+  echo "CLEANZY_GPG_KEY unset: .deb will not add the apt repo (no auto-updates)." >&2
+fi
+
 cat > "$STAGE/DEBIAN/control" <<CTRL
 Package: cleanzy
 Version: $VER
