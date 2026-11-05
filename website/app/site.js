@@ -4,7 +4,7 @@
 export const SITE = (process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com').replace(/\/$/, '');
 
 export const VERSION = '1.3.0';
-const D = '/downloads/';
+const D = `https://github.com/sahdevpalaniya/cleanzy/releases/download/v${VERSION}/`;
 // Every build, one row per package format, one link per CPU. The first link of the first row is the default.
 export const BUILDS = {
   win: [{ fmt: '.zip', links: [['x64', `${D}Cleanzy-${VERSION}-win-x64.zip`], ['Arm64', `${D}Cleanzy-${VERSION}-win-arm64.zip`]] }],
