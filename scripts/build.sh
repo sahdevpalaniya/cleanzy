@@ -22,7 +22,10 @@ pack() { # platform arch [icon]
   [[ -n "${3:-}" && -f "$3" ]] && icon=(--icon="$3")
   npx electron-packager . Cleanzy --platform="$1" --arch="$2" --out=dist --overwrite --prune=true \
     --app-version="$VER" --ignore="$IGNORE" "${icon[@]}"
+  trim "$1" "$2"
 }
+# The UI is English-only: drop Chromium's other 54 UI translations (~40 MB) so each download stays under 100 MB.
+trim() { find "dist/Cleanzy-$1-$2/locales" -name '*.pak' ! -name 'en-US.pak' -delete 2>/dev/null || true; }
 
 ARCHES="${ARCHES:-x64 arm64}"
 cd_zip() { (cd "$1" && rm -f "$2" && zip -qry "$2" "$3"); }   # -y keeps the symlinks inside a .app
@@ -39,6 +42,7 @@ for t in $([[ "$TARGET" == all ]] && echo linux mac win || echo "$TARGET"); do
       win)   if [[ "$HOST" == win ]] || command -v wine >/dev/null; then pack win32 "$a" assets/icons/icon.ico
              else # no wine: skip rcedit (icon/version stamping) — the .exe runs the same
                npx electron-packager . Cleanzy --platform=win32 --arch="$a" --out=dist --overwrite --prune=true --ignore="$IGNORE"
+               trim win32 "$a"
              fi
              # the zip holds one folder named Cleanzy, as the install steps describe
              rm -rf dist/zip-win && mkdir -p dist/zip-win && cp -al "dist/Cleanzy-win32-$a" dist/zip-win/Cleanzy

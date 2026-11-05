@@ -10,7 +10,6 @@ export const BUILDS = {
   win: [{ fmt: '.zip', links: [['x64', `${D}Cleanzy-${VERSION}-win-x64.zip`], ['Arm64', `${D}Cleanzy-${VERSION}-win-arm64.zip`]] }],
   mac: [
     { fmt: '.dmg', note: 'installer', links: [['Apple Silicon', `${D}Cleanzy-${VERSION}-mac-arm64.dmg`], ['Intel', `${D}Cleanzy-${VERSION}-mac-x64.dmg`]] },
-    { fmt: '.zip', links: [['Apple Silicon', `${D}Cleanzy-${VERSION}-mac-arm64.zip`], ['Intel', `${D}Cleanzy-${VERSION}-mac-x64.zip`]] },
   ],
   linux: [
     { fmt: '.deb', note: 'Debian, Ubuntu', links: [['x64', `${D}cleanzy_${VERSION}_amd64.deb`], ['Arm64', `${D}cleanzy_${VERSION}_arm64.deb`]] },
