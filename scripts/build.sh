@@ -15,7 +15,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")/.."
 case "$(uname -s)" in Darwin) HOST=mac;; MINGW*|MSYS*|CYGWIN*) HOST=win;; *) HOST=linux;; esac
 TARGET="${1:-$HOST}"
 VER="$(node -p "require('./package.json').version")"
-IGNORE='^/(dist|website|scripts|tests|\.git)(/|$)'
+IGNORE='^/(dist|website|scripts|tests|snap|\.git|\.playwright-mcp|\.claude|\.env[^/]*|node_modules/\.cache)(/|$)'
 
 pack() { # platform arch [icon]
   local icon=()

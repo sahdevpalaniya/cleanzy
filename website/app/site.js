@@ -3,7 +3,7 @@
 // TODO: set NEXT_PUBLIC_SITE_URL to the real domain at build time; example.com is only a placeholder.
 export const SITE = (process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com').replace(/\/$/, '');
 
-export const VERSION = '1.0.0';
+export const VERSION = '1.3.0';
 const D = `https://github.com/sahdevpalaniya/cleanzy/releases/download/v${VERSION}/`;
 // Every build, one row per package format, one link per CPU. The first link of the first row is the default.
 export const BUILDS = {
